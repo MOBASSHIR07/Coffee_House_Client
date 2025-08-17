@@ -14,6 +14,7 @@ const AddCoffee = () => {
         const supplier = form.supplier.value.trim();
         const taste = form.taste.value.trim();
         const category = form.category.value.trim();
+        const price = form.price.value.trim();
         const details = form.details.value.trim();
         const photurl = form.photurl.value.trim();
 
@@ -25,6 +26,7 @@ const AddCoffee = () => {
         if (!supplier) errors.push("Supplier is required.");
         if (!taste) errors.push("Taste is required.");
         if (!category) errors.push("Category is required.");
+        if (!price) errors.push("Price is required.");
         if (!details) errors.push("Details are required.");
         if (!photurl) {
             errors.push("Photo URL is required.");
@@ -41,7 +43,7 @@ const AddCoffee = () => {
             return;
         }
 
-        const newCoffee = { name, chef, supplier, taste, category, details, photurl };
+        const newCoffee = { name, chef, supplier, taste, category,price,  details, photurl };
         console.log(newCoffee);
 
         fetch('https://coffee-store-server-pink-tau.vercel.app/addcoffee', {
@@ -107,6 +109,10 @@ const AddCoffee = () => {
                             <div>
                                 <label className="block mb-2 text-sm font-medium">Category</label>
                                 <input type="text" placeholder="Enter coffee category" name='category' className="input input-bordered w-full" />
+                            </div>
+                            <div>
+                                <label className="block mb-2 text-sm font-medium">Price</label>
+                                <input type="text" placeholder="Enter coffee category" name='price' className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="block mb-2 text-sm font-medium">Details</label>

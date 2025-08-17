@@ -3,7 +3,7 @@ import { FaEdit, FaTrashAlt, FaInfoCircle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee, onDelete, user }) => {
-    const { _id, name, chef, photurl } = coffee;
+    const { _id, name, chef, photurl,price } = coffee;
 
     const handleDelete = (id) => {
 
@@ -54,7 +54,7 @@ const CoffeeCard = ({ coffee, onDelete, user }) => {
                 <div className="text-left">
                     <p><span className="font-bold">Name:</span> {name}</p>
                     <p><span className="font-bold">Chef:</span> {chef}</p>
-                    <p><span className="font-bold">Price:</span> 890 Taka</p>
+                    <p><span className="font-bold">Price:</span> {price}</p>
                 </div>
             </div>
 
